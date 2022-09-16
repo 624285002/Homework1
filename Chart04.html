@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<style>
+    .button {
+      background-color: #000000; /* Green */
+      border: none;
+      color: rgb(0, 255, 13);
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    
+    .button2 {background-color: #2600ff;} 
+    .button3 {background-color: #15ff00;}
+    .button4 {background-color: #ff00ea; color: black;} 
+    .button5 {background-color: #555555;} 
+</style>
+
+<body>
+<Table border="1">
+<Tr>
+    <Td><center><button class="button">ยี่ห้อรถยนต์ในหมู่บ้าน</button></center></Td>
+    <td><center><button class="button button2">ระดับราคา</button></center></td>
+    
+</Tr>
+
+<Tr>
+    <Td><canvas id="myChart" style="width:200%;max-width:600px"></canvas></Td>
+    <td><canvas id="myChart2" style="width:200%;max-width:600px"></canvas></td>
+    
+</Tr>
+</table>
+<Table>
+  <Tr>
+      <Td><center><button class="button">ยี่ห้อที่ใช้มากที่สุด<br>ISUZU จำนวน 216 คัน</button></center></Td>
+      <td><center><button class="button button2">ราคาที่แพงที่สุด<br>TOYOTA จำนวน 1.3M</button></center></td>
+  </Tr>
+  
+  <Tr>
+      <Td><canvas id="myChart4" style="width:200%;max-width:600px"></canvas></Td>
+      <td><canvas id="myChart5" style="width:200%;max-width:600px"></canvas></td>
+  </Tr>
+  </table>
+
+  <Table>
+    <Tr>
+        <Td><center><button class="button">โรงเรียนขนาดเล็ก<br>จำนวน...</button></center></Td>
+        <td><center><button class="button button2">โรงเรียนขนาดกลาง<br>จำนวน...</button></center></td>
+    </Tr>
+    
+    <Tr>
+        <Td><canvas id="myChart3" style="width:200%;max-width:600px"></canvas></Td>
+        <td><canvas id="myChart5" style="width:200%;max-width:600px"></canvas></td>
+    </Tr>
+    </table>  
+
+<script>
+var barColors = [
+  "#b91d47",
+  "#00aba9",
+  "#2b5797",
+  "#e8c3b9",
+  "#1e7145"
+];
+var xValues = ["ISUZU", "TOYOTA", "HONDA", "MITSUBISHI", "NISSAN"];
+var yValues = [216, 195, 44, 95, 36];
+
+new Chart("myChart", {
+  type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "แบ่งเป็นยี่ห้อต่างๆ"
+    }
+  }
+});
+
+var xValues = ["ISUZU", "TOYOTA", "HONDA", "MITSUBISHI", "NISSAN"];
+var yValues = [1.2, 1.3, 1, 1, 1];
+new Chart("myChart2", {
+  type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "ราคาตามยี่ห้อ/ล้าน"
+    }
+  }
+});
+var xValues3 = ["ด้านที่ 1", "ด้านที่ 2", "ด้านที่ 3", "ด้านที่ 4", "ด้านที่ 5"];
+var yValues3 = [55, 49, 44, 24, 15];
+new Chart("myChart3", {
+  type: "bar",
+  data: {
+    labels: xValues3,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues3
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "โรงเรียนขนาดใหญ่"
+    }
+  }
+});
+
+new Chart("myChart4", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "โรงเรียนขนาดใหญ่"
+    }
+  }
+});
+new Chart("myChart5", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "โรงเรียนขนาดใหญ่"
+    }
+  }
+});
+new Chart("myChart6", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "โรงเรียนขนาดใหญ่"
+    }
+  }
+});
+
+// JS 
+</script>
+
+</body>
+</html>

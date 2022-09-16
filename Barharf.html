@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Getting Started with Chart JS with www.chartjs3.com</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      .chartMenu {
+        width: 100vw;
+        height: 40px;
+        background: #1A1A1A;
+        color: rgb(90, 215, 110);
+      }
+      .chartMenu p {
+        padding: 10px;
+        font-size: 20px;
+      }
+      .chartCard {
+        width: 100vw;
+        height: calc(100vh - 40px);
+        background: rgb(90, 215, 110);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .chartBox {
+        width: 700px;
+        padding: 20px;
+        border-radius: 20px;
+        border: solid 3px rgb(0, 0, 0);
+        background: rgb(234, 243, 149);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chartMenu">
+      <p>WWW.CHARTJS3.COM (Chart JS 3.8.2)</p>
+    </div>
+    <div class="chartCard">
+      <div class="chartBox">
+        <canvas id="myChart"></canvas>
+      </div>
+    </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.1.0/chartjs-plugin-datalabels.min.js" integrity="sha512-Tfw6etYMUhL4RTki37niav99C6OHwMDB2iBT5S5piyHO+ltK2YX8Hjy9TXxhE1Gm/TmAV0uaykSpnHKFIAif/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+    // setup 
+    const data = {
+      labels: ['cow', 'cat', 'chicken', 'horse', 'buffalo', 'dog'],
+      datasets: [{
+        label: 'เพศผู้',
+        data: [3, 1, 12, 2, 2, 1],
+        backgroundColor: ['#98FB98',],
+        borderColor:['#000000',],
+        borderWidth:2    
+        },{
+        label: 'เพศเมีย',
+        data: [9, 2, 13, 1, 2, 2],
+        backgroundColor: ['#FFC0CB'],
+        borderColor:['#000000'],
+        borderWidth:2        
+      }]
+    };
+
+    // config 
+    const config = {
+      type: 'bar',
+      data,
+      options: {
+        scales: {
+          x:{
+            stacked:true,
+          },
+          y:{
+            stacked:true,
+            beginAtZero: true
+          }
+        }
+      },
+      plugins: [ChartDataLabels]
+    };
+
+    // render init block
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+    </script>
+
+  </body>
+</html>

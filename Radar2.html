@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Getting Started with Chart JS with www.chartjs3.com</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background: rgb(0, 204, 255);
+      }
+      .chartBox {
+        width: 700px;
+        padding: 20px;
+        border-radius: 20px;
+        border: solid 3px rgb(0, 0, 0);
+        background: rgb(2, 255, 2);
+      }
+    </style>
+  </head>
+  <body>    
+      <div class="chartBox">
+        <canvas id="myChart"></canvas>
+      </div>
+   
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+    // setup 
+    const data = {
+      labels: ['อยู่รอด', 'ฆ่า', 'ทรัพยากร', 'ซัพพอร์ต', 'ดาเมจ'],
+      datasets: [{
+        label: 'การร่วมการต่อสู้',
+        data: [98.9, 95.8, 84.1, 55.3, 92],
+        backgroundColor: ['rgba(200, 102, 19, 0.2)'],
+        borderColor: ['rgba(0, 0, 0, 1)'],
+        borderWidth: 2
+      }]
+    };
+
+    // config 
+    const config = {
+      type: 'radar',
+      data,
+      options: {
+        scales: {
+          }
+      }
+    };
+
+    // render init block
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+    </script>
+
+  </body>
+</html>
